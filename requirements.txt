@@ -8,3 +8,4 @@ requests==2.24.0
 gTTS==2.1.1
 discord==1.0.1
 Pillow==7.2.0
+webdriver-manager
