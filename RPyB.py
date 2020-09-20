@@ -20,20 +20,7 @@ bot = commands.Bot(command_prefix = 'uc ', help_command=None)
 TOKEN = os.environ.get('TOKEN')
 ownerid = '435750383491481602'
 
-CHROMEDRIVER_PATH = '/app/.wdm/drivers/chromedriver/linux64/85.0.4183.87'
-
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-gpu")
-chrome_options.add_argument("--window-size=1024x1400")
-chrome_options.add_experimental_option("prefs", {
-    "download.default_directory": os.getcwd(),
-    "download.prompt_for_download": False,
-    "download.directory_upgrade": True,
-    "safebrowsing.enabled": True
-})
-
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
+driver = webdriver.PhantomJS()
 
 driver.get("https://benisland.neocities.org/petpet/")
 assert "petpet".lower() in driver.title.lower()
