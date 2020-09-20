@@ -14,6 +14,7 @@ from foaas import fuck
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 
 bot = commands.Bot(command_prefix = 'uc ', help_command=None)
 TOKEN = os.environ.get('TOKEN')
@@ -34,7 +35,7 @@ chrome_options.add_experimental_option("prefs", {
     "safebrowsing.enabled": True
 })
 
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=CHROMEDRIVER_PATH)
+driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=ChromeDriverManager().install())
 
 driver.get("https://benisland.neocities.org/petpet/")
 assert "petpet".lower() in driver.title.lower()
