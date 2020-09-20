@@ -20,14 +20,12 @@ bot = commands.Bot(command_prefix = 'uc ', help_command=None)
 TOKEN = os.environ.get('TOKEN')
 ownerid = '435750383491481602'
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+CHROMEDRIVER_PATH = '/app/.wdm/drivers/chromedriver/linux64/85.0.4183.87'
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--window-size=1024x1400")
-chrome_options.binary_location = GOOGLE_CHROME_PATH
 chrome_options.add_experimental_option("prefs", {
     "download.default_directory": os.getcwd(),
     "download.prompt_for_download": False,
