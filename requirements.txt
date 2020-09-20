@@ -1,0 +1,10 @@
+numpy==1.19.2
+zalgo_text==0.6
+foaas==0.2.0
+selenium==3.141.0
+discord.py==1.4.1
+owotranslator==0.0.6
+requests==2.24.0
+gTTS==2.1.1
+discord==1.0.1
+Pillow==7.2.0
