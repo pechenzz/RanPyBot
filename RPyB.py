@@ -214,24 +214,25 @@ async def patpat(ctx, advanced = 0):
         #code with position changing
         await ctx.send('Work in progress...')
     elif advanced == 0:
-        pic = requests.get(ctx.message.attachments[0].url, allow_redirects=True)
-        open(f"pic{ctx.message.id}.png", "wb").write(pic.content)
-        input_file = driver.find_element_by_xpath("//input[@type='file' and @id='uploadFile']")
-        input_file.send_keys(os.getcwd() + f"\\pic{ctx.message.id}.png")
+        #pic = requests.get(ctx.message.attachments[0].url, allow_redirects=True)
+        #open(f"pic{ctx.message.id}.png", "wb").write(pic.content)
+        #input_file = driver.find_element_by_xpath("//input[@type='file' and @id='uploadFile']")
+        #input_file.send_keys(os.getcwd() + f"\\pic{ctx.message.id}.png")
 
-        await asyncio.sleep(5)
+        #await asyncio.sleep(5)
 
-        exportgif = driver.find_element_by_id("export")
-        exportgif.click()
+        #exportgif = driver.find_element_by_id("export")
+        #exportgif.click()
 
-        await asyncio.sleep(5)
+        #await asyncio.sleep(5)
 
-        output = driver.find_element_by_id('result')
-        output = output.get_attribute('outerHTML').split('"')
-        output = output[1]
+        #output = driver.find_element_by_id('result')
+        #output = output.get_attribute('outerHTML').split('"')
+        #output = output[1]
 
-        print(output)
-        driver.execute_script(open("download.js").read(), output, f"gif{ctx.message.id}.gif")
-        await asyncio.sleep(5)
-        await ctx.send(driver.find_element_by_id('info').get_attribute('innerHTML'), file=discord.File(f"gif{ctx.message.id}.gif"))
+        #print(output)
+        #driver.execute_script(open("download.js").read(), output, f"gif{ctx.message.id}.gif")
+        #await asyncio.sleep(5)
+        #await ctx.send(driver.find_element_by_id('info').get_attribute('innerHTML'), file=discord.File(f"gif{ctx.message.id}.gif"))
+        await ctx.send('Work in progress...')
 bot.run(TOKEN)
